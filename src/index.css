@@ -1,0 +1,14 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif
+}
+.gist {
+  max-width:350px;
+  overflow:auto
+}
+
+.gist .blob-wrapper.data {
+  max-height:200px;
+  overflow:auto
+}
