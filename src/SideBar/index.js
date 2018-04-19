@@ -1,32 +1,31 @@
-import React from 'react';
-import './SideBar.css';
+import React, {Component} from 'react';
+import AppBar from 'material-ui/AppBar';
+import Drawer from 'material-ui/Drawer';
+import MenuItem from 'material-ui/MenuItem';
+import CodeIcon from 'material-ui/svg-icons/action/code';
 
-class SideBar extends React.Component {
-
-  constructor(props) {
-    super(props);
-    this.handleClick = this.handleClick.bind(this);
-  }
-
-  handleClick(id, e){
-    e.preventDefault();
-    this.props.preview(id)
-  }
+class SideBar extends Component {
 
   render(){
     return (
-      <div className="SideBar">
-        {this.props.content.slice(0, 10).map(item => {
+      <Drawer open={this.props.open} onRequestChange={this.props.onRequestChange} docked={false} style={{ paddingTop: "60px" }}>
+        <AppBar title={this.props.title} showMenuIconButton={false} />
+        {this.props.dataFound ? this.props.gistData.slice(0, 10).map((item, index) => {
           return (
-            <div key={item.id} className="Blob" onClick={(e) => this.handleClick(item.id, e)}>
-              <b>{item.owner.login}</b>
-              <br />
-              <span className="italic">{item.description ? item.description : 'No Description'}</span>
-              <hr />
-            </div>
+            <MenuItem
+              key={index}
+              leftIcon={<CodeIcon />}
+              primaryText={item.id}
+              onClick={(e) => this.props.onClick(item.id, e)} 
+            />
           ) 
-        })}
-      </div>
+        }) : (
+            <MenuItem 
+              primaryText="Nothing to see here..."
+              disabled={true}
+            />
+        )}
+      </Drawer>
     );
   }
 }

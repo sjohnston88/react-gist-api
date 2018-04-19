@@ -1,24 +1,27 @@
-import React from 'react';
-import Gist from 'react-gist';
+import React, {Component} from 'react';
 import axios from 'axios';
 
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import AppBar from 'material-ui/AppBar';
-import Drawer from 'material-ui/Drawer';
-import MenuItem from 'material-ui/MenuItem';
+import SideBar from '../SideBar/index';
+import MainContent from '../MainContent/index'
 
-import './App.css';
+import './index.css';
 
-class App extends React.Component {
+class App extends Component {
   constructor(props) {
     super(props);
     this.state = { 
       dataFound: true,
+      open: false,
       siteName: 'GitHub Gists',
       userName: '',
       gistPreview: '',
       gistData: []
     }
+    
+    this.handleMenuIcon = this.handleMenuIcon.bind(this);
+    this.handleOverlayClick = this.handleOverlayClick.bind(this);
     this.handleClick = this.handleClick.bind(this);
     this.getPublicGists = this.getPublicGists.bind(this);
   }
@@ -26,7 +29,21 @@ class App extends React.Component {
   handleClick(id, e){
     e.preventDefault();
     this.setState({ 
+      open: false,
       gistPreview: id
+    })
+    window.scrollTo(0, 0)
+  }
+  
+  handleMenuIcon(e, open){
+    this.setState({ 
+      open: !open,
+    })
+  }
+  
+  handleOverlayClick(e, open){
+    this.setState({ 
+      open: !open,
     })
   }
 
@@ -42,8 +59,7 @@ class App extends React.Component {
   async componentDidMount(){ 
     const userName = this.props.match.params.username;
     let gistData = await this.getPublicGists(userName)
-    console.log(gistData);
-    if(gistData.data[0]){
+    if(gistData && gistData.data.length){
       this.setState({
         userName: userName,
         gistPreview: gistData.data[0].id,
@@ -59,30 +75,22 @@ class App extends React.Component {
   render() {
     return (
       <MuiThemeProvider>
-        <AppBar showMenuIconButton={false} style={{ position: "fixed" }} />
-        <Drawer docker={true} style={{ paddingTop: "70px" }}>
-        <AppBar title={this.state.siteName} showMenuIconButton={false} />
-          {this.state.dataFound ? this.state.gistData.slice(0, 10).map(item => {
-            return (
-              <MenuItem 
-                primaryText={`ID: ${item.id}`}
-                onClick={(e) => this.handleClick(item.id, e)} 
-                style={{
-                  whiteSpace:"nowrap",
-                  overflow: "hidden",
-                  textOverflow: "ellipsis"
-                }}
-              />
-            ) 
-          }) : null }
-        </Drawer>
-        <main>
-          <div className="GistPreview">
-            {this.state.dataFound ? 
-              <Gist className="GistPreview" height="500px" id={this.state.gistPreview} /> 
-              : <h1><span role="img" aria-label="hmm emoji">🤔</span> Nothing found for {this.props.match.params.username}</h1> }
-          </div>
-        </main>
+        <div>
+          <AppBar title={this.state.siteName} onLeftIconButtonClick={this.handleMenuIcon} style={{ position: "fixed" }} />
+          <SideBar 
+            open={this.state.open} 
+            title={this.state.siteName} 
+            dataFound={this.state.dataFound} 
+            gistData={this.state.gistData} 
+            onRequestChange={this.handleOverlayClick} 
+            onClick={this.handleClick}
+          />
+          <MainContent 
+            userName={this.props.match.params.username}
+            dataFound={this.state.dataFound}
+            gistPreview={this.state.gistPreview}
+          />
+        </div>
       </MuiThemeProvider>
     );
   }

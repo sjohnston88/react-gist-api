@@ -4,16 +4,10 @@ import App from '../App/index';
 
 class SiteRoutes extends Component {
 
-  // constructor(props) {
-  //   super(props);
-
-  //   this.username = this.username.bind(this);
-  // }
-
   render() {
     return (
       <Router>
-       <Switch>
+        <Switch>
           <Route path="/:username" component={App} />
           <Redirect from='/' to='/defunkt' />
         </Switch>
