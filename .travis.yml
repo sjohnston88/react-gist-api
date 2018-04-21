@@ -7,5 +7,4 @@ script:
   - npm test
 deploy:
   provider: heroku
-  api_key:
-    secure: $herokuKey
+  api_key: $herokuKey
