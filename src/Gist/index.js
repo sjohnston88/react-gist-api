@@ -31,7 +31,7 @@ class Gist extends React.PureComponent {
     const styles = '<style>*{font-size:12px;}.gist{overflow:auto}.gist .blob-wrapper.data {max-height:500px;overflow:auto;} #readme {height:500px !important;} </style>';
     const elementId = file ? `gist-${id}-${file}` : `gist-${id}`;
     const resizeScript = `onload="parent.document.getElementById('${elementId}').style.height=document.body.scrollHeight + 'px'"`;
-    const iframeHtml = `<html><head><base target="_parent">${styles}</head><body ${resizeScript}>${gistScript}</body></html>`;
+    const iframeHtml = `<html><head><base target="_blank">${styles}</head><body ${resizeScript}>${gistScript}</body></html>`;
 
     doc.open();
     doc.writeln(iframeHtml);

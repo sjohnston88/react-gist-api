@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import queryString from 'query-string';
+import moment from 'moment';
 import axios from 'axios';
 
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
@@ -15,6 +17,7 @@ class App extends Component {
       dataFound: true,
       open: false,
       siteName: 'GitHub Gists',
+      invalidDate: false,
       userName: '',
       gistPreview: '',
       gistData: []
@@ -47,9 +50,9 @@ class App extends Component {
     })
   }
 
-  async getPublicGists(userName) {
+  async getPublicGists(userName, since) {
     try {
-      let gistData = await axios.get(`https://api.github.com/users/${userName}/gists`);
+      let gistData = await axios.get(`https://api.github.com/users/${userName}/gists${since ? `?since=${since}` : ''}`);
       return gistData;
     } catch (error) {
       console.error(error);
@@ -58,7 +61,20 @@ class App extends Component {
 
   async componentDidMount(){ 
     const userName = this.props.match.params.username;
-    let gistData = await this.getPublicGists(userName)
+    let since;
+    if (this.props.location.search){
+      let parsedQuery = queryString.parse(this.props.location.search);
+      if (parsedQuery.since){
+        if (moment(parsedQuery.since).isValid()){
+          since = moment(parsedQuery.since).toISOString();
+        } else {
+          this.setState({ 
+            invalidDate: true,
+          })
+        }
+      }
+    }
+    let gistData = await this.getPublicGists(userName, since)
     if(gistData && gistData.data.length){
       this.setState({
         userName: userName,
@@ -89,6 +105,7 @@ class App extends Component {
             userName={this.props.match.params.username}
             dataFound={this.state.dataFound}
             gistPreview={this.state.gistPreview}
+            invalidDate={this.state.invalidDate}
           />
         </div>
       </MuiThemeProvider>
