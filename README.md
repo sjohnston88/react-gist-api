@@ -19,8 +19,8 @@ I've used the React Material-UI libary to get up and running quickly. A basic UI
 
 ## Back End
 
-Normally I would have created a simple ExpressJS server to interact with the Gist API, format/process JSON responses and setup endpoints, but for this project I have instead used async/await and [Axios](https://medium.com/@tacomanator/customizing-create-react-app-aa9ffb88165) to get up and running quickly. 
+Normally I would have created a simple ExpressJS server to interact with the Gist API, format/process JSON responses and setup endpoints, but for this project I have instead used async/await and [Axios](https://github.com/axios/axios) to get up and running quickly. 
 
 ## Development and Deployment
 
-I've chosen Travis CI and Heroku for the CI/CD implementation. The Heroku API key is stored securely and passed in at build time as an enviroment variable and Travis runs tests before deploying automatically to Heroku.
+I've chosen Travis CI and Heroku for the CI/CD implementation. The Heroku API key is stored securely and passed in at build time as an enviroment variable and Travis runs unit tests before deploying automatically to Heroku.
