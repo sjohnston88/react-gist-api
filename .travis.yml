@@ -8,3 +8,6 @@ script:
 deploy:
   provider: heroku
   api_key: $herokuKey
+  app:
+    master: blooming-atoll-68899
+    production: blooming-atoll-68899
