@@ -9,10 +9,10 @@ class MainContent extends Component {
       <main> 
         <div className="GistPreview">
           {this.props.invalidDate ? <p><b>Error:</b> Please enter a valid ISO 8601 date</p> : null }
-          {this.props.userName === 'defunkt' ? <DefaultMessage /> : <h2>Viewing Gists by {this.props.userName}</h2>}
+          {this.props.userName === 'defunkt' ? <DefaultMessage /> : null}
           
           {this.props.dataFound ? 
-            <Gist className="GistPreview" id={this.props.gistPreview} /> 
+            <div><h2>Viewing Gists by {this.props.userName}</h2><Gist className="GistPreview" id={this.props.gistPreview} /></div>
             : <div><h1><span role="img" aria-label="hmm emoji">🤔</span> Nothing found for user "{this.props.userName}"</h1><p>Try entering another username in the address bar.</p></div>
           }
         </div>
