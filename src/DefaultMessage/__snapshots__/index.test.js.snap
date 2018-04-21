@@ -1,0 +1,183 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`default 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <DefaultMessage />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <h3>
+          Welcome to React-Gists-API App
+</h3>,
+        <p>
+          By default you'll see GitHub user "defunkts" Gists. Open the left drawer to view more Gists from this user.
+</p>,
+        <p>
+          Enter a username in the URL bar in place of "defunkts" to fetch different Gists. Additionally, you can provide a 
+          <code>
+                    ?since=YYYY-MM-DD
+          </code>
+           parameter to filter results by date.
+</p>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Welcome to React-Gists-API App",
+        },
+        "ref": null,
+        "rendered": "Welcome to React-Gists-API App",
+        "type": "h3",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "By default you'll see GitHub user \\"defunkts\\" Gists. Open the left drawer to view more Gists from this user.",
+        },
+        "ref": null,
+        "rendered": "By default you'll see GitHub user \\"defunkts\\" Gists. Open the left drawer to view more Gists from this user.",
+        "type": "p",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            "Enter a username in the URL bar in place of \\"defunkts\\" to fetch different Gists. Additionally, you can provide a ",
+            <code>
+              ?since=YYYY-MM-DD
+</code>,
+            " parameter to filter results by date.",
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          "Enter a username in the URL bar in place of \\"defunkts\\" to fetch different Gists. Additionally, you can provide a ",
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "?since=YYYY-MM-DD",
+            },
+            "ref": null,
+            "rendered": "?since=YYYY-MM-DD",
+            "type": "code",
+          },
+          " parameter to filter results by date.",
+        ],
+        "type": "p",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <h3>
+            Welcome to React-Gists-API App
+</h3>,
+          <p>
+            By default you'll see GitHub user "defunkts" Gists. Open the left drawer to view more Gists from this user.
+</p>,
+          <p>
+            Enter a username in the URL bar in place of "defunkts" to fetch different Gists. Additionally, you can provide a 
+            <code>
+                        ?since=YYYY-MM-DD
+            </code>
+             parameter to filter results by date.
+</p>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Welcome to React-Gists-API App",
+          },
+          "ref": null,
+          "rendered": "Welcome to React-Gists-API App",
+          "type": "h3",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "By default you'll see GitHub user \\"defunkts\\" Gists. Open the left drawer to view more Gists from this user.",
+          },
+          "ref": null,
+          "rendered": "By default you'll see GitHub user \\"defunkts\\" Gists. Open the left drawer to view more Gists from this user.",
+          "type": "p",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "Enter a username in the URL bar in place of \\"defunkts\\" to fetch different Gists. Additionally, you can provide a ",
+              <code>
+                ?since=YYYY-MM-DD
+</code>,
+              " parameter to filter results by date.",
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            "Enter a username in the URL bar in place of \\"defunkts\\" to fetch different Gists. Additionally, you can provide a ",
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "?since=YYYY-MM-DD",
+              },
+              "ref": null,
+              "rendered": "?since=YYYY-MM-DD",
+              "type": "code",
+            },
+            " parameter to filter results by date.",
+          ],
+          "type": "p",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

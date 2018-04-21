@@ -1,0 +1,197 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`default 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <SideBar />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "children": Array [
+        <AppBar
+          showMenuIconButton={false}
+          title=""
+          zDepth={1}
+/>,
+        <MenuItem
+          anchorOrigin={
+                    Object {
+                              "horizontal": "right",
+                              "vertical": "top",
+                            }
+          }
+          checked={false}
+          desktop={false}
+          disabled={true}
+          focusState="none"
+          insetChildren={false}
+          primaryText="Nothing to see here..."
+          targetOrigin={
+                    Object {
+                              "horizontal": "left",
+                              "vertical": "top",
+                            }
+          }
+/>,
+      ],
+      "disableSwipeToOpen": false,
+      "docked": false,
+      "onRequestChange": undefined,
+      "open": null,
+      "openSecondary": false,
+      "style": Object {
+        "paddingTop": "60px",
+      },
+      "swipeAreaWidth": 30,
+      "width": null,
+      "zDepth": 2,
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "showMenuIconButton": false,
+          "title": "",
+          "zDepth": 1,
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "anchorOrigin": Object {
+            "horizontal": "right",
+            "vertical": "top",
+          },
+          "checked": false,
+          "desktop": false,
+          "disabled": true,
+          "focusState": "none",
+          "insetChildren": false,
+          "primaryText": "Nothing to see here...",
+          "targetOrigin": Object {
+            "horizontal": "left",
+            "vertical": "top",
+          },
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+    ],
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": Array [
+          <AppBar
+            showMenuIconButton={false}
+            title=""
+            zDepth={1}
+/>,
+          <MenuItem
+            anchorOrigin={
+                        Object {
+                                    "horizontal": "right",
+                                    "vertical": "top",
+                                  }
+            }
+            checked={false}
+            desktop={false}
+            disabled={true}
+            focusState="none"
+            insetChildren={false}
+            primaryText="Nothing to see here..."
+            targetOrigin={
+                        Object {
+                                    "horizontal": "left",
+                                    "vertical": "top",
+                                  }
+            }
+/>,
+        ],
+        "disableSwipeToOpen": false,
+        "docked": false,
+        "onRequestChange": undefined,
+        "open": null,
+        "openSecondary": false,
+        "style": Object {
+          "paddingTop": "60px",
+        },
+        "swipeAreaWidth": 30,
+        "width": null,
+        "zDepth": 2,
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "showMenuIconButton": false,
+            "title": "",
+            "zDepth": 1,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "anchorOrigin": Object {
+              "horizontal": "right",
+              "vertical": "top",
+            },
+            "checked": false,
+            "desktop": false,
+            "disabled": true,
+            "focusState": "none",
+            "insetChildren": false,
+            "primaryText": "Nothing to see here...",
+            "targetOrigin": Object {
+              "horizontal": "left",
+              "vertical": "top",
+            },
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

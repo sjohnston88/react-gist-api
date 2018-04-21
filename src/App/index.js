@@ -55,7 +55,7 @@ class App extends Component {
       let gistData = await axios.get(`https://api.github.com/users/${userName}/gists${since ? `?since=${since}` : ''}`);
       return gistData;
     } catch (error) {
-      console.error(error);
+      //console.error(error);
     }
   }
 
